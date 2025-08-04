@@ -18,7 +18,7 @@ namespace TestWarehouse.Controllers
         }
 
         [HttpGet]
-        public async Task<IResult> GetIncomesAsync([FromQuery] DateTime? start = null, [FromQuery] DateTime? end = null, [FromQuery] List<string> number = null, [FromQuery] List<Guid>? resource_id = null, [FromQuery] List<Guid>? unit_id = null)
+        public async Task<IResult> GetIncomesAsync([FromQuery] DateOnly? start = null, [FromQuery] DateOnly? end = null, [FromQuery] List<string> number = null, [FromQuery] List<Guid>? resource_id = null, [FromQuery] List<Guid>? unit_id = null)
         {
             var income = await _incomeRepository.GetFiltredIncomeDtosAsync(start, end, number, resource_id, unit_id);
             return Results.Ok(income);

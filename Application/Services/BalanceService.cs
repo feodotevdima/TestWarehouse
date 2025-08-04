@@ -17,6 +17,9 @@ namespace Application.Services
         {
             foreach (var item in balance)
             {
+                if (item.Quantity == 0)
+                    continue;
+
                 var oldBalance = (await _balanceRepository.GetFiltredBalanceAsync(new List<Guid> { item.ResourceId }, new List<Guid> { item.UnitId })).FirstOrDefault();
 
                 if (oldBalance != null)
@@ -37,21 +40,24 @@ namespace Application.Services
         {
             foreach (var item in balance)
             {
+                if (item.Quantity == 0)
+                    continue;
+
                 var oldBalance = (await _balanceRepository.GetFiltredBalanceAsync(new List<Guid> { item.ResourceId }, new List<Guid> { item.UnitId })).FirstOrDefault();
 
                 if (oldBalance == null)
                 {
-                    throw new UnprocessableEntityException($"Невозможно изменить колличество, такого ресурса нет на складе");
+                    throw new UnprocessableEntityException($"Невозможно изменить колличество, на складе не хватает ресурсов");
                 }
                 else
                 {
                     if (oldBalance.Quantity < item.Quantity)
                     {
-                        throw new UnprocessableEntityException($"Невозможно изменить колличество, на складе не хватает ресурса");
+                        throw new UnprocessableEntityException($"Невозможно изменить колличество, на складе не хватает ресурсов");
                     }
                     else if (oldBalance.Quantity == item.Quantity)
                     {
-                        await _balanceRepository.RemoveBalanceAsync(item.Id);
+                        await _balanceRepository.RemoveBalanceAsync(oldBalance.Id);
                     }
                     else
                     {
@@ -76,7 +82,7 @@ namespace Application.Services
 
                 if (existingBalance == null)
                 {
-                    throw new UnprocessableEntityException($"Невозможно изменить колличество, такого ресурса нет на складе");
+                    throw new UnprocessableEntityException($"Невозможно изменить колличество, на складе не хватает ресурсов");
                 }
 
                 existingBalance.Quantity -= item.Quantity;
@@ -106,11 +112,11 @@ namespace Application.Services
                 }
             }
 
-            foreach (var b in currentBalances.ToList())
+            foreach (var b in currentBalances)
             {
                 if (b.Quantity < 0)
                 {
-                    throw new UnprocessableEntityException($"Невозможно изменить колличество, на складе не хватает ресурса");
+                    throw new UnprocessableEntityException($"Невозможно изменить колличество, на складе не хватает ресурсов");
                 }
             }
 

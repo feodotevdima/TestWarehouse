@@ -18,7 +18,7 @@ namespace TestWarehouse.Controllers
         }
 
         [HttpGet]
-        public async Task<IResult> GetShipmentsAsync([FromQuery] DateTime? start = null, [FromQuery] DateTime? end = null, [FromQuery] List<string>? number = null, [FromQuery] List<Guid>? resource_id = null, [FromQuery] List<Guid>? client_id = null, [FromQuery] List<Guid>? unit_id = null)
+        public async Task<IResult> GetShipmentsAsync([FromQuery] DateOnly? start = null, [FromQuery] DateOnly? end = null, [FromQuery] List<string>? number = null, [FromQuery] List<Guid>? resource_id = null, [FromQuery] List<Guid>? client_id = null, [FromQuery] List<Guid>? unit_id = null)
         {
             var shipments = await _shipmentRepository.GetFiltredShipmentDtosAsync(start, end, number, resource_id, client_id, unit_id);
             return Results.Ok(shipments);

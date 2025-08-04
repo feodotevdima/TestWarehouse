@@ -8,7 +8,7 @@ namespace Application.Repository
 {
     public class IncomeRepository: IIncomeRepository
     {
-        public async Task<IEnumerable<GetIncomeDto>> GetFiltredIncomeDtosAsync(DateTime? start = null, DateTime? end = null, List<string>? numbers = null, List<Guid>? resourceIds = null, List<Guid>? unitIds = null)
+        public async Task<IEnumerable<GetIncomeDto>> GetFiltredIncomeDtosAsync(DateOnly? start = null, DateOnly? end = null, List<string>? numbers = null, List<Guid>? resourceIds = null, List<Guid>? unitIds = null)
         {
             using (var db = new AppDbContext())
             {

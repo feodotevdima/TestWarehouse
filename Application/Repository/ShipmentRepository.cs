@@ -8,7 +8,7 @@ namespace Application.Repository
 {
     public class ShipmentRepository : IShipmentRepository
     {
-        public async Task<IEnumerable<GetShipmentDto>> GetFiltredShipmentDtosAsync(DateTime? start = null, DateTime? end = null, List<string>? numbers = null, List<Guid>? clientIds = null, List<Guid>? resourceIds = null, List<Guid>? unitIds = null)
+        public async Task<IEnumerable<GetShipmentDto>> GetFiltredShipmentDtosAsync(DateOnly? start = null, DateOnly? end = null, List<string>? numbers = null, List<Guid>? clientIds = null, List<Guid>? resourceIds = null, List<Guid>? unitIds = null)
         {
             using (var db = new AppDbContext())
             {

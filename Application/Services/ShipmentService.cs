@@ -1,4 +1,6 @@
 ﻿using Application.Interfaces;
+using Application.Repository;
+using Application.Services;
 using Core.Exceptions;
 using Core.Models;
 using Persistence.Dto;
@@ -10,20 +12,23 @@ namespace Application.Services
         private readonly IShipmentRepository _shipmentRepository;
         private readonly IShipmentResourceRepository _shipmentResourceRepository;
         private readonly IBalanceService _balanceService;
+        private readonly IUnitRepository _unitRepository;
+        private readonly IResourceRepository _resourceRepository;
+        private readonly IClientRepository _clientRepository;
 
-        public ShipmentService(IShipmentRepository shipmentRepository, IShipmentResourceRepository shipmentResourceRepository, IBalanceService balanceService) 
+        public ShipmentService(IShipmentRepository shipmentRepository, IShipmentResourceRepository shipmentResourceRepository, IBalanceService balanceService, IUnitRepository unitRepository, IResourceRepository resourceRepository, IClientRepository clientRepository) 
         { 
             _shipmentRepository = shipmentRepository;
             _shipmentResourceRepository = shipmentResourceRepository;
             _balanceService = balanceService;
+            _unitRepository = unitRepository;
+            _resourceRepository = resourceRepository;
+            _clientRepository = clientRepository;
         }
 
         public async Task<Shipment> AddShipmentAsync(CreateShipmentDto dto)
         {
-            var oldShipment = await _shipmentRepository.GetFiltredShipmentDtosAsync(numbers: new List<string> { dto.Number });
-
-            if(oldShipment != null && oldShipment.Count() > 0)
-                throw new ConflictException($"Невозможно создать документ отгрузки с номером {dto.Number}. Такой уже зарегистрирован в системе");
+            await ShipmentValidateAsync(dto);
 
             var shipment = new Shipment { Id = dto.Id, Number = dto.Number, ClientId = dto.ClientId, Date = dto.Date };   
             await _shipmentRepository.AddShipmentAsync(shipment);
@@ -48,27 +53,11 @@ namespace Application.Services
 
             if (shipment.IsSigned == false)
             {
-                var balance = new List<Balance>();
-
-                foreach (var item in existingResources)
-                {
-                    var b = new Balance { Id = Guid.NewGuid(), ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity };
-                    balance.Add(b);
-                }
-
-                await _balanceService.RemoveBalanceAsync(balance);
+                await RemoveBalanceAsync(existingResources);
             }
             else
             {
-                var balance = new List<Balance>();
-
-                foreach (var item in existingResources)
-                {
-                    var b = new Balance { Id = Guid.NewGuid(), ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity };
-                    balance.Add(b);
-                }
-
-                await _balanceService.AddBalanceAsync(balance);
+                await AddBalanceAsync(existingResources);
             }
 
             shipment.IsSigned = ! shipment.IsSigned;
@@ -80,42 +69,32 @@ namespace Application.Services
         {
             var oldShipment = await _shipmentRepository.GetShipmentByIdAsync(dto.Id);
 
-            if (oldShipment == null)
-            {
-                throw new NotFoundException($"Документ поступления с ID {dto.Id} не найден");
-            }
+            var existingResources = await _shipmentResourceRepository.GetShipmentResourceByShipmentIdAsync(dto.Id);
 
-            if (dto.Number != oldShipment.Number)
-            {
-                var shipments = await _shipmentRepository.GetFiltredShipmentDtosAsync(numbers: new List<string> { dto.Number });
-                if (shipments != null && shipments.Any())
-                {
-                    throw new ConflictException($"Невозможно создать документ отгрузки с номером {dto.Number}. Такой уже зарегистрирован в системе");
-                }
-            }
+            await ShipmentValidateAsync(dto, existingResources);
 
             oldShipment.Number = dto.Number;
             oldShipment.Date = dto.Date;
             oldShipment.ClientId = dto.ClientId;
 
-            var existingResources = await _shipmentResourceRepository.GetShipmentResourceByShipmentIdAsync(dto.Id);
-
-            if (dto.IsSigned != oldShipment.IsSigned)
+            var resources = new List<ShipmentResource>();
+            foreach (var item in dto.resources)
             {
-                var oldBalance = new List<Balance>();
-                var newBalance = new List<Balance>();
+                var resource = new ShipmentResource { Id = Guid.NewGuid(), ShipmentId = oldShipment.Id, ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity };
+                resources.Add(resource);
+            }
 
-                foreach (var item in existingResources)
-                {
-                    oldBalance.Add(new Balance { ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity });
-                }
-
-                foreach (var item in dto.resources)
-                {
-                    newBalance.Add(new Balance { ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity });
-                }
-
-                await _balanceService.UpdateBalanceAsync(oldBalance, newBalance);
+            if (dto.IsSigned && oldShipment.IsSigned)
+            {
+                await UpdateBalanceAsync(existingResources, resources);
+            }
+            else if(dto.IsSigned && !oldShipment.IsSigned)
+            {
+                await RemoveBalanceAsync(resources);
+            }
+            else if (!dto.IsSigned && oldShipment.IsSigned)
+            {
+                await AddBalanceAsync(resources);
             }
 
             oldShipment.IsSigned = dto.IsSigned;
@@ -126,11 +105,7 @@ namespace Application.Services
                 await _shipmentResourceRepository.RemoveShipmentResourceAsync(item.Id);
             }
 
-            foreach (var item in dto.resources)
-            {
-                await _shipmentResourceRepository.AddShipmentResourceAsync(new ShipmentResource { Id = Guid.NewGuid(), ShipmentId = oldShipment.Id, ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity });
-            }
-
+            await _shipmentResourceRepository.AddShipmentResourceAsync(resources);
 
             return oldShipment;
         }
@@ -144,16 +119,11 @@ namespace Application.Services
 
             var existingResources = await _shipmentResourceRepository.GetShipmentResourceByShipmentIdAsync(id);
 
-            if (shipment.IsSigned == true)
+            if (shipment.IsSigned)
             {
-                var balance = new List<Balance>();
-                foreach (var i in existingResources)
-                {
-                    balance.Add(new Balance { ResourceId = i.ResourceId, UnitId = i.UnitId, Quantity = i.Quantity });
-                }
-
-                await _balanceService.RemoveBalanceAsync(balance);
+                await AddBalanceAsync(existingResources);
             }
+
             foreach (var item in existingResources)
             {
                 await _shipmentResourceRepository.RemoveShipmentResourceAsync(item.Id);
@@ -162,6 +132,164 @@ namespace Application.Services
             await _shipmentRepository.RemoveShipmentAsync(shipment.Id);
 
             return shipment;
+        }
+
+
+
+        private async Task RemoveBalanceAsync(IEnumerable<ShipmentResource> resources)
+        {
+            var balance = new List<Balance>();
+
+            foreach (var item in resources)
+            {
+                var b = new Balance { Id = Guid.NewGuid(), ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity };
+                balance.Add(b);
+            }
+
+            await _balanceService.RemoveBalanceAsync(balance);
+        }
+
+
+        private async Task AddBalanceAsync(IEnumerable<ShipmentResource> resources)
+        {
+            var balance = new List<Balance>();
+
+            foreach (var item in resources)
+            {
+                var b = new Balance { Id = Guid.NewGuid(), ResourceId = item.ResourceId, UnitId = item.UnitId, Quantity = item.Quantity };
+                balance.Add(b);
+            }
+
+            await _balanceService.AddBalanceAsync(balance);
+        }
+
+        private async Task UpdateBalanceAsync(IEnumerable<ShipmentResource> oldRresources, IEnumerable<ShipmentResource> newRresources)
+        {
+            var oldBalance = new List<Balance>();
+            var newBalance = new List<Balance>();
+
+            foreach (var item in oldRresources)
+            {
+                oldBalance.Add(new Balance
+                {
+                    ResourceId = item.ResourceId,
+                    UnitId = item.UnitId,
+                    Quantity = item.Quantity
+                });
+            }
+
+            foreach (var item in newRresources)
+            {
+                newBalance.Add(new Balance
+                {
+                    ResourceId = item.ResourceId,
+                    UnitId = item.UnitId,
+                    Quantity = item.Quantity
+                });
+            }
+
+            await _balanceService.UpdateBalanceAsync(oldBalance, newBalance);
+        }
+
+        private async Task ShipmentValidateAsync(CreateShipmentDto dto)
+        {
+            if(dto.resources.Count == 0)
+                throw new BadRequestException($"Невозможно создать документ отгрузки так как он пустой");
+
+            var shipments = await _shipmentRepository.GetFiltredShipmentDtosAsync(numbers: new List<string> { dto.Number });
+            if (shipments != null && shipments.Any())
+            {
+                throw new ConflictException($"Невозможно создать документ отгрузки с номером {dto.Number}. Такой уже зарегистрирован в системе");
+            }
+
+            var client = await _clientRepository.GetClientByIdAsync(dto.ClientId);
+            if (client == null)
+                throw new NotFoundException($"Клиент не зарегистрирована в системе");
+
+            if (!client.IsActive)
+                throw new ConflictException($"Клиент {client.Name} Находится в архиве. Её нельзя использовать");
+
+            foreach (var item in dto.resources)
+            {
+                var unit = await _unitRepository.GetUnitByIdAsync(item.UnitId);
+                var resource = await _resourceRepository.GetResourceByIdAsync(item.ResourceId);
+
+                if (unit == null)
+                    throw new NotFoundException($"Единица измерения не зарегистрирована в системе");
+
+                if (resource == null)
+                    throw new NotFoundException($"Ресурс не зарегистрирован в системе");
+
+                if (!unit.IsActive)
+                    throw new ConflictException($"Единица измерения {unit.Name} Находится в архиве. Её нельзя использовать");
+
+                if (!resource.IsActive)
+                    throw new ConflictException($"Ресурс {resource.Name} Находится в архиве. Его нельзя использовать");
+            }
+        }
+
+        private async Task ShipmentValidateAsync(CreateShipmentDto newShipment, IEnumerable<ShipmentResource> oldShipmentResources)
+        {
+            var oldShipment = await _shipmentRepository.GetShipmentByIdAsync(newShipment.Id);
+
+            if (oldShipment == null)
+            {
+                throw new NotFoundException($"Документ отгрузки с ID {newShipment.Id} не найден");
+            }
+
+            if (newShipment.Number != oldShipment.Number)
+            {
+                var shipments = await _shipmentRepository.GetFiltredShipmentDtosAsync(numbers: new List<string> { newShipment.Number });
+                if (shipments != null && shipments.Any())
+                {
+                    throw new ConflictException($"Невозможно создать документ отгрузки с номером {newShipment.Number}. Такой уже зарегистрирован в системе");
+                }
+            }
+
+            if (newShipment.ClientId != oldShipment.ClientId)
+            {
+                var client = await _clientRepository.GetClientByIdAsync(newShipment.ClientId);
+                if (client == null)
+                    throw new NotFoundException($"Клиент не зарегистрирована в системе");
+
+                if (!client.IsActive)
+                    throw new ConflictException($"Клиент {client.Name} Находится в архиве. Её нельзя использовать");
+            }
+
+            var ListoldShipmentResources = oldShipmentResources.ToList();
+
+            foreach (var item in newShipment.resources)
+            {
+                var unit = await _unitRepository.GetUnitByIdAsync(item.UnitId);
+                var resource = await _resourceRepository.GetResourceByIdAsync(item.ResourceId);
+
+                if (unit == null)
+                    throw new NotFoundException($"Единица измерения не зарегистрирована в системе");
+
+                if (resource == null)
+                    throw new NotFoundException($"Ресурс не зарегистрирован в системе");
+
+                if (!unit.IsActive || !resource.IsActive)
+                {
+                    var oldResource = ListoldShipmentResources.FirstOrDefault(i => i.UnitId == item.UnitId && i.ResourceId == item.ResourceId);
+
+                    if (oldResource != null)
+                    {
+                        ListoldShipmentResources.Remove(oldResource);
+                        continue;
+                    }
+                }
+
+                if (!unit.IsActive)
+                {
+                    throw new ConflictException($"Единица измерения {unit.Name} Находится в архиве. Её нельзя использовать");
+                }
+
+                if (!resource.IsActive)
+                {
+                    throw new ConflictException($"Ресурс {resource.Name} Находится в архиве. Его нельзя использовать");
+                }
+            }
         }
     }
 }
