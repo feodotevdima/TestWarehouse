@@ -1,0 +1,126 @@
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\appsettings.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\TestWarehouse.staticwebassets.endpoints.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\TestWarehouse.exe
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\TestWarehouse.deps.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\TestWarehouse.runtimeconfig.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\TestWarehouse.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\TestWarehouse.pdb
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Npgsql.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Application.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Core.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Persistence.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Application.pdb
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Core.pdb
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\bin\Debug\net9.0\Persistence.pdb
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.csproj.AssemblyReference.cache
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.AssemblyInfoInputs.cache
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.AssemblyInfo.cs
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.csproj.CoreCompileInputs.cache
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.sourcelink.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\scopedcss\bundle\TestWarehouse.styles.css
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWare.0DAB85F7.Up2Date
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\refint\TestWarehouse.dll
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.pdb
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\TestWarehouse.genruntimeconfig.cache
+C:\Users\Дима\source\repos\feodotevdima\TestWarehouse\TestWarehouse\obj\Debug\net9.0\ref\TestWarehouse.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\appsettings.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\TestWarehouse.staticwebassets.endpoints.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\TestWarehouse.exe
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\TestWarehouse.deps.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\TestWarehouse.runtimeconfig.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\TestWarehouse.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\TestWarehouse.pdb
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Npgsql.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Application.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Core.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Persistence.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Application.pdb
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Core.pdb
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\bin\Debug\net9.0\Persistence.pdb
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.csproj.AssemblyReference.cache
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.AssemblyInfoInputs.cache
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.AssemblyInfo.cs
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.csproj.CoreCompileInputs.cache
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.sourcelink.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\scopedcss\bundle\TestWarehouse.styles.css
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWare.0DAB85F7.Up2Date
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\refint\TestWarehouse.dll
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.pdb
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\TestWarehouse.genruntimeconfig.cache
+C:\Users\Дима\OneDrive\Рабочий стол\TestWarehouse\Api\TestWarehouse\obj\Debug\net9.0\ref\TestWarehouse.dll

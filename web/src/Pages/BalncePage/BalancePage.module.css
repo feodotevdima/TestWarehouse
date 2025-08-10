@@ -1,0 +1,36 @@
+.balancePage {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.balancePage h1 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.buttons{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.ItemSelectContainer {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start; 
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .balancePage {
+        padding: 10px;
+    }
+    
+    .balancePage h1 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,52 @@
+.incomePage {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.incomePage h1 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.buttons{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.ItemSelectContainer {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start; 
+  margin-bottom: 50px;
+}
+
+.filterConteyner{
+    margin-top: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+}
+
+.dateConteyner{
+    margin-right: 15px;
+}
+
+.periodTitle{
+    margin: 6px;
+}
+
+@media (max-width: 768px) {
+    .incomePage {
+        padding: 10px;
+    }
+    
+    .incomePage h1 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+}

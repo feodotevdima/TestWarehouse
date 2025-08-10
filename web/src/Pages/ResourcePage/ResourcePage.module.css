@@ -1,0 +1,29 @@
+.resourcePage {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resourcePage h1 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.buttons{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .resourcePage {
+        padding: 10px;
+    }
+    
+    .resourcePage h1 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+}
